@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.example.T24.dto.TrabajosPosibles;
+
 @Entity
 @Table(name="empleado")
 
@@ -54,7 +56,7 @@ public class Empleado {
 	}
 
 	public void setTrabajo(String trabajo) {
-		this.trabajo = trabajo;
+		this.trabajo=TrabajosPosibles.valueOf(trabajo).toString();
 	}
 
 	public int getSalario() {
@@ -65,8 +67,8 @@ public class Empleado {
 	
 	public void setSalario(String trabajo) {
 		
-		String trabajoMinus=trabajo.toLowerCase();
-		switch(trabajoMinus) {
+
+		switch(trabajo) {
 		case "programador":
 			this.salario = 1000;
 			break;
