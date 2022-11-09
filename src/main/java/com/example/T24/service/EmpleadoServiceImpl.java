@@ -21,8 +21,8 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 	
 	@Override
-	public List<Empleado> listarEmpleadosNombre(String nombre) {
-		return iEmpleadoDAO.findByNombre(nombre);
+	public List<Empleado> listarEmpleadoTrabajo(String trabajo) {
+		return iEmpleadoDAO.findByTrabajo(trabajo);
 	}
 
 	@Override

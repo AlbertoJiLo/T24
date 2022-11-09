@@ -26,17 +26,23 @@ public class ControladorEmpleado {
 		return empleadoServiceImpl.listarEmpleados();
 	}
 	
-	//listar Empleados por campo nombre
-	@GetMapping("/empleados/nombre/{nombre}")
-	public List<Empleado> listarEmpleadosNombre(@PathVariable(name="nombre") String nombre) {
-	    return empleadoServiceImpl.listarEmpleadosNombre(nombre);
+	//listar Empleados por campo trabajo
+	@GetMapping("/empleados/trabajo/{trabajo}")
+	public List<Empleado> listarEmpleadosNombre(@PathVariable(name="trabajo") String trabajo) {
+	    return empleadoServiceImpl.listarEmpleadoTrabajo(trabajo);
 	}
 	
 	
 	@PostMapping("/empleados")
 	public Empleado crearEmpleado(@RequestBody Empleado empleado) {
 		
+		
+		//Tendremos en cuenta que al introducir el trabajo se pondrá automáticamente el salario.
+		
+		empleado.setSalario(empleado.getTrabajo());
+		
 		return empleadoServiceImpl.crearEmpleado(empleado);
+		
 	}
 	
 	
@@ -59,10 +65,10 @@ public class ControladorEmpleado {
 		Empleado empleado_actualizado= new Empleado();
 		
 		empleado_seleccionado= empleadoServiceImpl.leerEmpleado(id);
-		
+
 		empleado_seleccionado.setNombre(empleado.getNombre());
 		empleado_seleccionado.setTrabajo(empleado.getTrabajo());
-		empleado_seleccionado.setSalario(empleado.getSalario());
+		empleado_seleccionado.setSalario(empleado.getTrabajo());
 
 		
 		empleado_actualizado = empleadoServiceImpl.actualizarEmpleado(empleado_seleccionado);

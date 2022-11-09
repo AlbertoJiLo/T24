@@ -1,6 +1,5 @@
 package com.example.T24.dto;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,11 +15,8 @@ public class Empleado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="nombre")
 	private String nombre;
-	@Column(name="trabajo")
 	private String trabajo;
-	@Column(name="salario")
 	private int salario;
 	
 	
@@ -65,8 +61,22 @@ public class Empleado {
 		return salario;
 	}
 
-	public void setSalario(int salario) {
-		this.salario = salario;
+	//En este setter le asigno un salario dependiendo del trabajo.
+	
+	public void setSalario(String trabajo) {
+		
+		String trabajoMinus=trabajo.toLowerCase();
+		switch(trabajoMinus) {
+		case "programador":
+			this.salario = 1000;
+			break;
+		case "profesor":
+			this.salario = 1500;
+			break;
+		case "tutor":
+			this.salario = 1200;
+			break;
+		}
 	}
 
 	//To string personalizado

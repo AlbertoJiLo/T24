@@ -8,7 +8,7 @@ import com.example.T24.dto.Empleado;
 
 public interface IEmpleadoDAO extends JpaRepository<Empleado, Long>{
 	
-	//Listar clientes or campo nombre
-	public List<Empleado> findByNombre(String nombre);
+	//Listar empleados por su trabajo
+	public List<Empleado> findByTrabajo(String trabajo);
 	
 }

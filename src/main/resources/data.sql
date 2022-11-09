@@ -7,9 +7,9 @@ create table empleado(
 	trabajo varchar(250) NOT NULL,
     salario int);
 
-insert into empleado (nombre, trabajo)values('Alberto','Programador');
-insert into empleado (nombre, trabajo)values('Facundo','Programador');
-insert into empleado (nombre, trabajo)values('Carlos','Programador');
-insert into empleado (nombre, trabajo)values('Jose','Profesor');
-insert into empleado (nombre, trabajo)values('Carmen','Tutor');
-insert into empleado (nombre, trabajo)values('Teresa','Profesor');
+insert into empleado (nombre, trabajo, salario)values('Alberto','Programador', '1000');
+insert into empleado (nombre, trabajo, salario)values('Facundo','Programador', '1000');
+insert into empleado (nombre, trabajo, salario)values('Carlos','Programador', '1000');
+insert into empleado (nombre, trabajo, salario)values('Jose','Profesor', '1500');
+insert into empleado (nombre, trabajo, salario)values('Carmen','Tutor', '1200');
+insert into empleado (nombre, trabajo, salario)values('Teresa','Profesor', '1500');

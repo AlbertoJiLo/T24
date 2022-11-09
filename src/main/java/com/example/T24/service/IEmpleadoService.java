@@ -14,7 +14,7 @@ public interface IEmpleadoService {
 	
 	public Empleado leerEmpleado(Long id); // READ
 	
-	public List<Empleado> listarEmpleadosNombre(String nombre);//Listar empleados por campo nombre
+	public List<Empleado> listarEmpleadoTrabajo(String trabajo);//Listar empleados por campo trabajo
 	
 	public Empleado actualizarEmpleado(Empleado empleado); // UPDATE
 	
